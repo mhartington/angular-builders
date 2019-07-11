@@ -1,0 +1,26 @@
+{
+  "title": "Custom serve for app",
+  "description": "Options for custom serve.",
+  "type": "object",
+  "properties": {
+    "consolelogs": {
+      "type": "boolean",
+      "description": "Print console logs to the terminal."
+    },
+    "consolelogsPort": {
+      "type": "number",
+      "description": "Port for console log server.",
+      "default": 53703
+    },
+    "devServerTarget": {
+      "type": "string",
+      "description": "Target to use for serve."
+    },
+    "buildTarget": {
+      "type": "string",
+      "description": "Target to use for build."
+    }
+  },
+  "additionalProperties": false,
+  "required": ["buildTarget", "devServerTarget"]
+}

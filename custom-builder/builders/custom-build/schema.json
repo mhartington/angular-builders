@@ -1,0 +1,22 @@
+{
+  "title": "Custom build for my app",
+  "description": "Options for custom build",
+  "type": "object",
+  "properties": {
+    "browserTarget": {
+      "type": "string",
+      "description": "Target to build."
+    },
+    "consolelogs": {
+      "type": "boolean",
+      "description": "Inject script to print console logs to the terminal."
+    },
+    "consolelogsPort": {
+      "type": "number",
+      "description": "Port for console log server.",
+      "default": 53703
+    }
+  },
+  "additionalProperties": false,
+  "required": ["browserTarget"]
+}

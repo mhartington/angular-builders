@@ -1,0 +1,24 @@
+{
+  "name": "slides",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "mdx-deck deck.mdx",
+    "build": "mdx-deck build deck.mdx",
+    "help": "mdx-deck"
+  },
+  "keywords": [],
+  "author": "Mike Hartington <mikehartington@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "mdx-deck": "2.5.0"
+  },
+  "dependencies": {
+    "code-surfer": "2.0.0-alpha.9",
+    "json-loader": "0.5.7",
+    "mdx-deck-code-surfer": "0.5.5",
+    "raw-loader": "3.0.0",
+    "styled-components": "4.3.2"
+  }
+}

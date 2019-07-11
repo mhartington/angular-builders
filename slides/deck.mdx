@@ -1,0 +1,353 @@
+import { Appear, Image } from 'mdx-deck';
+import Angular from './layouts/Angular';
+import Dark from './layouts/Dark';
+import ionic from './theme/ionic';
+import oceanicNext from './theme/oceanic-next';
+import {
+  CodeSurferLayout,
+  CodeSurferColumnLayout,
+  Code,
+  Step,
+  vsDark
+} from 'code-surfer';
+export const themes = [oceanicNext, ionic];
+
+<div>
+  <h1 style={{fontFamily: "Impact", fontSize: '200px'}}>Enhance!</h1>
+
+### Customizing the Angular CLI
+
+Mike Hartington | Ionic, Angular GDE
+
+[@mhartington](https://twitter.com/mhartington)
+
+</div>
+
+---
+
+import IonicLayout from './layouts/Ionic';
+
+<IonicLayout>
+
+### Have you heard about Ionic!?
+
+<Appear>
+  <h3>Good!</h3>
+  <p>This is not about Ionic</p>
+</Appear>
+
+</IonicLayout>
+
+---
+
+<Angular>
+
+<div>
+  <h3 style={{fontFamily: "Impact", fontSize: '3em'}}>Angular CLI FTW</h3>
+
+- The CLI is a major part of Angular
+- Creating Projects, scaffolding features, etc
+- Running test, linting, adding universal!
+
+</div>
+
+</Angular>
+
+---
+
+## CLI is Magic
+
+- CLI abstracts a lot of aspects for dev
+- No one needs to know webpack (win)
+- But it's kind of secretive
+
+---
+
+### We have two choices...
+
+---
+
+<Dark>
+  <Image
+    src="https://pbs.twimg.com/media/DqZGX38WwAA4EwM?format=jpg&name=medium"
+    size="contain"
+  />
+</Dark>
+
+---
+
+<Dark>
+  <Image
+    src="https://i.giphy.com/media/3ohc14lCEdXHSpnnSU/giphy.gif"
+    size="contain"
+  />
+</Dark>
+
+---
+
+### _How does the CLI even work?_
+
+## 🤔
+
+---
+
+<CodeSurferLayout>
+
+```shell
+$ ng build
+```
+
+```shell
+$ ng build # build the app
+```
+
+```shell
+$ ng build # build the app
+$ ng serve # serve the app
+```
+
+```shell
+$ ng build # build the app
+$ ng serve # serve the app
+$ ng test # test the app
+```
+
+</CodeSurferLayout>
+
+---
+
+## Builders API
+
+- API for interacting with workspace
+- Schedule other tasks
+- Modify Build process
+
+---
+
+<CodeSurferLayout>
+  <Code
+    lang="json"
+    code={require('!!raw-loader!./code-samples/sample-angular.js').default}
+  />
+  <Code
+    focus="5:11"
+    lang="json"
+    code={require('!!raw-loader!./code-samples/sample-angular.js').default}
+  />
+</CodeSurferLayout>
+
+---
+
+### Builder object
+
+- `build` is **our** CLI command (`ng run app:build`)
+- `builder` is the builder command we want to run
+- `options` get passed to builder
+- `configurations` optionally get passed
+
+---
+
+### So what's the "builder" <br/> look like?
+
+---
+
+<CodeSurferLayout>
+
+```typescript
+import { BuilderOutput, createBuilder } from '@angular-devkit/architect';
+
+export default createBuilder(_commandBuilder);
+
+function _commandBuilder(
+  options: JsonObject,
+  context: BuilderContext,
+  ): Promise<BuilderOutput> {
+  ...
+}
+```
+
+</CodeSurferLayout>
+
+---
+
+- Passes options from workspace
+- Context from the CLI and builder
+
+---
+
+### Example 1
+
+- Modify existing builder
+- Add extra resources to app
+- Use case: Deploy app to special target
+
+---
+
+<CodeSurferLayout>
+
+```json title="Sample angular.json"
+{
+  "custom-build": {
+    "builder": "@my-org/angular-toolkit:custom-build",
+    "options": {
+      "browserTarget": "app:build"
+    },
+    "configurations": {
+      "production": {
+        "browserTarget": "app:build:production"
+      }
+    }
+  }
+}
+```
+
+```json title="@my-org/angular-toolkit/package.json"
+{
+  "name": "@my-org/angular-toolkit",
+  ...
+
+  "peerDependencies": {
+    "@angular-devkit/architect": ">=0.800.0",
+    "@angular-devkit/build-angular": ">=0.800.0",
+    "@angular-devkit/core": ">=8.0.0",
+    "@angular-devkit/schematics": ">=8.0.0"
+  },
+
+  "builders": "./builders.json",
+}
+
+```
+
+```json title="@my-org/angular-toolkit/builders.json"
+{
+  "builders": {
+    "custom-build": {
+      "implementation": "./builders/custom-build/index",
+      "schema": "./builders/custom-build/schema.json",
+      "description": "Perform a browser build with custom assets."
+    }
+  }
+}
+```
+
+```json 3,10  title="@my-org/angular-toolkit/builders.json"
+{
+  "builders": {
+    "custom-build": {
+      "implementation": "./builders/custom-build/index",
+      "schema": "./builders/custom-build/schema.json",
+      "description": "Perform a browser build with custom assets."
+    }
+  }
+}
+"builder": "@my-org/angular-toolkit:custom-build",
+
+```
+
+</CodeSurferLayout>
+
+---
+
+<CodeSurferLayout>
+  <Code lang="typescript" code={require('!!raw-loader!../custom-builder/builders/custom-build/index.ts').default} />
+  <Code lang="typescript" focus="1:13" code={require('!!raw-loader!../custom-builder/builders/custom-build/index.ts').default}/>
+  <Code lang="typescript" focus="15:18" code={ require('!!raw-loader!../custom-builder/builders/custom-build/index.ts').default} />
+  <Code lang="typescript" focus="19:26" code={require('!!raw-loader!../custom-builder/builders/custom-build/index.ts').default}/>
+  <Code lang="typescript" focus="28:33" code={require('!!raw-loader!../custom-builder/builders/custom-build/index.ts').default}/>
+</CodeSurferLayout>
+
+---
+
+<Dark bgColor="#1b2b34">
+
+<h1>
+  <code style={{ color: 'white' }}>$ Demo Time</code>
+</h1>
+
+</Dark>
+
+---
+
+### Pretty cool?
+
+<Appear>
+
+- Contrived? Maybe
+
+* But Actually used in Ionic!
+
+</Appear>
+
+---
+
+<Dark bgColor="#c23237">
+
+### Something more complex
+
+</Dark>
+
+---
+
+### Modify serve
+
+- Append extra file
+- Add secondary logging
+- Use case: Deploy to remote device
+
+---
+
+<CodeSurferLayout>
+  <Code lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-serve/index.ts').default}/>
+  <Code focus="15:20" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-serve/index.ts').default}/>
+  <Code focus="22:30" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-serve/index.ts').default}/>
+  <Code focus="33:35" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-serve/index.ts').default}/>
+  <Code focus="37:40" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-serve/index.ts').default}/>
+  <Code focus="1:43" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-serve/index.ts').default}/>
+</CodeSurferLayout>
+
+---
+
+<Dark bgColor="#1b2b34">
+
+<h1>
+  <code style={{ color: 'white' }}>$ Demo Time</code>
+</h1>
+
+</Dark>
+
+---
+
+### Ok, now what?
+
+---
+
+- Builders are still new-ish
+- Guide on Angular.io is published
+- _But_ devkit API is no documented well
+
+---
+
+### Copy and Paste from <br/> the Internet
+
+---
+
+- [@angular-builders/jest](https://www.npmjs.com/package/@angular-builders/jest)
+- [@angular-builders/timestamp](https://www.npmjs.com/package/@angular-builders/timestamp)
+- [@angular-builders/custom-webpack](https://www.npmjs.com/package/@angular-builders/custom-webpack)
+- [Minko Sample repo](https://github.com/mgechev/cli-builders-demo)
+
+---
+
+[@ionic/angular-toolkit](https://github.com/ionic-team/angular-toolkit)
+
+---
+
+Dive in and ask questions
+
+---
+
+### Thank you
+
+
+&lt;/html&gt;
+

@@ -1,0 +1,16 @@
+{
+  "builders": {
+    "custom-build": {
+      "implementation": "./builders/custom-build/index",
+      "schema": "./builders/custom-build/schema.json",
+      "description": "Perform a browser build with custom assets."
+    },
+
+
+    "custom-serve": {
+      "implementation": "./builders/custom-serve/index",
+      "schema": "./builders/custom-serve/schema.json",
+      "description": "Run the dev-server with custom assets."
+    }
+  }
+}
