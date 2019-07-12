@@ -2,15 +2,16 @@ import { Appear, Image } from 'mdx-deck';
 import Angular from './layouts/Angular';
 import Dark from './layouts/Dark';
 import ionic from './theme/ionic';
-import oceanicNext from './theme/oceanic-next';
+import theme from './layouts/provider'
+/* import oceanicNext from './theme/oceanic-next'; */
 import {
   CodeSurferLayout,
   CodeSurferColumnLayout,
   Code,
   Step,
-  vsDark
+  nightOwl as oceanicNext
 } from 'code-surfer';
-export const themes = [oceanicNext, ionic];
+export const themes = [oceanicNext, ionic, theme];
 
 <div>
   <h1 style={{fontFamily: "Impact", fontSize: '200px'}}>Enhance!</h1>
@@ -29,7 +30,7 @@ import IonicLayout from './layouts/Ionic';
 
 <IonicLayout>
 
-### Have you heard about Ionic!?
+### Have you heard <br/> about Ionic!?
 
 <Appear>
   <h3>Good!</h3>
@@ -166,12 +167,36 @@ function _commandBuilder(
 }
 ```
 
+
+
+```typescript 6 subtitle="Passes options from Workspace"
+import { BuilderOutput, createBuilder } from '@angular-devkit/architect';
+
+export default createBuilder(_commandBuilder);
+
+function _commandBuilder(
+  options: JsonObject,
+  context: BuilderContext,
+  ): Promise<BuilderOutput> {
+  ...
+}
+```
+
+
+```typescript 7 subtitle="The running context from the CLI"
+import { BuilderOutput, createBuilder } from '@angular-devkit/architect';
+
+export default createBuilder(_commandBuilder);
+
+function _commandBuilder(
+  options: JsonObject,
+  context: BuilderContext,
+  ): Promise<BuilderOutput> {
+  ...
+}
+```
+
 </CodeSurferLayout>
-
----
-
-- Passes options from workspace
-- Context from the CLI and builder
 
 ---
 
@@ -258,7 +283,7 @@ function _commandBuilder(
 
 ---
 
-<Dark bgColor="#1b2b34">
+<Dark bgColor="#011627">
 
 <h1>
   <code style={{ color: 'white' }}>$ Demo Time</code>
@@ -274,7 +299,7 @@ function _commandBuilder(
 
 - Contrived? Maybe
 
-* But Actually used in Ionic!
+* But actually used in Ionic!
 
 </Appear>
 
@@ -307,7 +332,7 @@ function _commandBuilder(
 
 ---
 
-<Dark bgColor="#1b2b34">
+<Dark bgColor="#011627">
 
 <h1>
   <code style={{ color: 'white' }}>$ Demo Time</code>
@@ -323,7 +348,7 @@ function _commandBuilder(
 
 - Builders are still new-ish
 - Guide on Angular.io is published
-- _But_ devkit API is no documented well
+- _But_ devkit is not really documented
 
 ---
 

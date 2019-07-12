@@ -3,19 +3,26 @@ export default {
   monospace: '"SF Mono", Menlo, monospace',
 
   colors: {
-    text: '#000',
-    background: 'white',
+    text: '#151D34',
+    background: '#ffffff',
     link: '#07c',
     pre: '#f0f',
-    preBackground: '#333',
-    code: '#1b2b34'
+    preBackground: '#011627',
+    code: '#434C6C'
   },
   css: {
     fontSize: '16px',
     textAlign: 'center',
+    boxSizing: 'border-box',
     '@media screen and (min-width:56em)': {
       fontSize: '32px'
     },
+    'p.cs-subtitle, .cs-title': {
+      background: 'none !important',
+      color: 'white',
+      fontSize: '40px'
+    },
+
     '@media screen and (min-width:64em)': {
       fontSize: '48px'
     },
@@ -26,8 +33,7 @@ export default {
       margin: 0
     }
   },
-  '*' : {
-    boxSizing: 'border-box'
+  '*': {
   },
   pre: {
     textAlign: 'left',
@@ -48,21 +54,23 @@ export default {
     textTransform: 'uppercase',
     marginTop: 0,
     marginBottom: 0,
+    letterSpacing: 30
   },
   h2: {
     fontSize: '3.5em',
     fontWeight: 900,
     marginBottom: 0,
     marginTop: 0,
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
+    wordSpacing: 20
   },
   h3: {
     fontSize: '2em',
-    marginBottom: 0,
-    marginBottom: 0,
+    marginBottom: 10,
     fontWeight: 900,
-    marginTop: 0,
-    textTransform: 'uppercase'
+    marginTop: 10,
+    textTransform: 'uppercase',
+    wordSpacing: 10
   }
 };
 
