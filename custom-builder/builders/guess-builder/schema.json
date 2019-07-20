@@ -1,0 +1,16 @@
+{
+  "title": "Build app with GuessJS",
+  "description": "Options for guess build",
+  "type": "object",
+  "properties": {
+    "routes": {
+      "type": "object",
+      "description": "Routes model"
+    },
+    "gaToken": {
+      "type": "string",
+      "description": "GA Access token"
+    }
+  },
+  "additionalProperties": false
+}

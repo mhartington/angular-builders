@@ -8,15 +8,18 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@schematics/angular": "^8.0.0",
-    "tslib": "^1.9.0",
+    "guess-parser": "0.3.7",
+    "guess-webpack": "0.3.7",
     "ws": "^6.1.4"
   },
   "devDependencies": {
-    "@angular-devkit/architect": ">=0.800.0",
-    "@angular-devkit/build-angular": ">=0.800.0",
+    "@angular-devkit/architect": "0.801.2",
+    "@angular-devkit/build-angular": "0.801.2",
+    "@angular-devkit/build-webpack": "0.801.2",
     "@angular-devkit/core": ">=8.0.0",
     "@angular-devkit/schematics": ">=8.0.0",
+    "@types/node": "12.6.8",
+    "@types/webpack": "4.32.0",
     "@types/ws": "6.0.1",
     "tslint": "^5.12.0",
     "tslint-ionic-rules": "0.0.21",
