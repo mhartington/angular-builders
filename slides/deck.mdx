@@ -146,7 +146,7 @@ $ ng test # test the app
 
 ---
 
-### So what's the "builder" <br/> look like?
+### So what's the <br/> "builder" look like?
 
 ---
 
@@ -160,7 +160,7 @@ export default createBuilder(_commandBuilder);
 function _commandBuilder(
   options: JsonObject,
   context: BuilderContext,
-  ): Promise<BuilderOutput> {
+  ): Observable<BuilderOutput> {
   ...
 }
 ```
@@ -175,7 +175,7 @@ export default createBuilder(_commandBuilder);
 function _commandBuilder(
   options: JsonObject,
   context: BuilderContext,
-  ): Promise<BuilderOutput> {
+  ): Observable<BuilderOutput> {
   ...
 }
 ```
@@ -189,7 +189,7 @@ export default createBuilder(_commandBuilder);
 function _commandBuilder(
   options: JsonObject,
   context: BuilderContext,
-  ): Promise<BuilderOutput> {
+  ): Observable<BuilderOutput> {
   ...
 }
 ```
@@ -311,21 +311,23 @@ function _commandBuilder(
 
 ---
 
-### Modify serve
+### Extending Webpack
 
-- Append extra file
-- Add secondary logging
-- Use case: Deploy to remote device
+- Take a third-party webpack plugin
+- Reuse existing builders
+- Use case: Non-destructive builder
 
 ---
 
 <CodeSurferLayout>
-  <Code lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-serve/index.ts').default}/>
-  <Code focus="15:20" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-serve/index.ts').default}/>
-  <Code focus="22:30" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-serve/index.ts').default}/>
-  <Code focus="33:35" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-serve/index.ts').default}/>
-  <Code focus="37:40" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-serve/index.ts').default}/>
-  <Code focus="1:43" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-serve/index.ts').default}/>
+  <Code lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-guess-build/index.ts').default}/>
+  <Code focus="14:18" subtitle="Get the browser build spec" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-guess-build/index.ts').default}/>
+  <Code focus="20:22" subtitle="Get the initial options raw builder"  lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-guess-build/index.ts').default}/>
+  <Code focus="24:26" subtitle="Validate initial options against builder" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-guess-build/index.ts').default}/>
+  <Code focus="27" subtitle="Pass those options and context to wrapper function" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-guess-build/index.ts').default}/>
+
+  <Code lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/utils/guess.ts').default}/>
+  <Code focus="19:46" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/utils/guess.ts').default}/>
 </CodeSurferLayout>
 
 ---
@@ -358,6 +360,12 @@ _As long as there are types_
 
 </Appear>
 
+---
+
+
+![](https://raw.githubusercontent.com/Tibing/nyan-builder/master/nyan-demo.gif)
+
+[Tibing/nyan-builder](https://github.com/tibing/nyan-builder)
 
 ---
 
@@ -372,22 +380,14 @@ _As long as there are types_
 
 ---
 
-
-![](https://raw.githubusercontent.com/Tibing/nyan-builder/master/nyan-demo.gif)
-
-[Tibing/nyan-builder](https://github.com/tibing/nyan-builder)
-
-
-
----
-
+### Get stuck?
 #### Dive in and ask questions
 
 ---
 
 ### Thank you
 
-
-&lt;/html&gt;
-
 [mhartington.io/angular-builders](https://mhartington.io/angular-builders/)
+
+#### &lt;/html&gt;
+

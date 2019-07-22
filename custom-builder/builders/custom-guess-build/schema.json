@@ -3,6 +3,10 @@
   "description": "Options for guess build",
   "type": "object",
   "properties": {
+    "browserTarget": {
+      "type": "string",
+      "description": "Target to build."
+    },
     "routes": {
       "type": "object",
       "description": "Routes model"
@@ -12,5 +16,6 @@
       "description": "GA Access token"
     }
   },
-  "additionalProperties": false
+  "additionalProperties": false,
+  "required": ["browserTarget"]
 }

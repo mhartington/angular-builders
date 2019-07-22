@@ -5,8 +5,11 @@
       "schema": "./builders/custom-build/schema.json",
       "description": "Perform a browser build with custom assets."
     },
-
-
+    "custom-guess-build": {
+      "implementation": "./builders/custom-guess-build/index",
+      "schema": "./builders/custom-guess-build/schema.json",
+      "description": "Perform a browser build with guess."
+    },
     "custom-serve": {
       "implementation": "./builders/custom-serve/index",
       "schema": "./builders/custom-serve/schema.json",
