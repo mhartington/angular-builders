@@ -16,7 +16,7 @@ function createGuessBuild(
   context: BuilderContext
 ): Observable<BuilderOutput> {
   const browserTargetSpec = targetFromTargetString(options.browserTarget);
-
+  context.builder.builderName = 'browser';
   return forkJoin(
     from(context.getTargetOptions(browserTargetSpec)),
     from(context.getBuilderNameForTarget(browserTargetSpec))

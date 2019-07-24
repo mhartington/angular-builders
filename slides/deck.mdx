@@ -2,14 +2,10 @@ import { Appear, Image } from 'mdx-deck';
 import Angular from './layouts/Angular';
 import Dark from './layouts/Dark';
 import ionic from './theme/ionic';
-import {
-  CodeSurferLayout,
-  CodeSurferColumnLayout,
-  Code,
-  Step,
-  duotoneLight,
-} from 'code-surfer';
-export const themes = [duotoneLight, ionic];
+import {  CodeSurferLayout,  CodeSurferColumnLayout,  Code,  Step,  oceanicNext,} from 'code-surfer';
+
+
+export const themes = [oceanicNext,ionic];
 
 <div>
   <h1 style={{fontFamily: "Impact", fontSize: '200px'}}>Enhance!</h1>
@@ -124,15 +120,8 @@ $ ng test # test the app
 ---
 
 <CodeSurferLayout>
-  <Code
-    lang="json"
-    code={require('!!raw-loader!./code-samples/sample-angular.js').default}
-  />
-  <Code
-    focus="5:11"
-    lang="json"
-    code={require('!!raw-loader!./code-samples/sample-angular.js').default}
-  />
+  <Code lang="json" code={require('!!raw-loader!./code-samples/sample-angular.js').default} />
+  <Code focus="5:11" lang="json" code={require('!!raw-loader!./code-samples/sample-angular.js').default} />
 </CodeSurferLayout>
 
 ---
@@ -165,8 +154,6 @@ function _commandBuilder(
 }
 ```
 
-
-
 ```typescript 6 subtitle="Passes options from Workspace"
 import { BuilderOutput, createBuilder } from '@angular-devkit/architect';
 
@@ -179,7 +166,6 @@ function _commandBuilder(
   ...
 }
 ```
-
 
 ```typescript 7 subtitle="The running context from the CLI"
 import { BuilderOutput, createBuilder } from '@angular-devkit/architect';
@@ -272,11 +258,11 @@ function _commandBuilder(
 ---
 
 <CodeSurferLayout>
-  <Code lang="typescript" code={require('!!raw-loader!../custom-builder/builders/custom-build/index.ts').default} />
-  <Code lang="typescript" focus="1:13" code={require('!!raw-loader!../custom-builder/builders/custom-build/index.ts').default}/>
-  <Code lang="typescript" focus="15:18" code={ require('!!raw-loader!../custom-builder/builders/custom-build/index.ts').default} />
-  <Code lang="typescript" focus="19:26" code={require('!!raw-loader!../custom-builder/builders/custom-build/index.ts').default}/>
-  <Code lang="typescript" focus="28:33" code={require('!!raw-loader!../custom-builder/builders/custom-build/index.ts').default}/>
+  <Code lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-build/index.ts') .default } />
+  <Code lang="typescript" focus="1:13" code={ require('!!raw-loader!../custom-builder/builders/custom-build/index.ts') .default } />
+  <Code lang="typescript" focus="15:18" code={ require('!!raw-loader!../custom-builder/builders/custom-build/index.ts') .default } />
+  <Code lang="typescript" focus="19:26" code={ require('!!raw-loader!../custom-builder/builders/custom-build/index.ts') .default } />
+  <Code lang="typescript" focus="28:33" code={ require('!!raw-loader!../custom-builder/builders/custom-build/index.ts') .default } />
 </CodeSurferLayout>
 
 ---
@@ -322,6 +308,7 @@ function _commandBuilder(
 <CodeSurferLayout>
   <Code lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-guess-build/index.ts').default}/>
   <Code focus="14:18" subtitle="Get the browser build spec" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-guess-build/index.ts').default}/>
+  <Code focus="19" subtitle="H4x0r m0v3: change the builder name 🙃" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-guess-build/index.ts').default}/>
   <Code focus="20:22" subtitle="Get the initial options raw builder"  lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-guess-build/index.ts').default}/>
   <Code focus="24:26" subtitle="Validate initial options against builder" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-guess-build/index.ts').default}/>
   <Code focus="27" subtitle="Pass those options and context to wrapper function" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-guess-build/index.ts').default}/>
@@ -362,7 +349,6 @@ _As long as there are types_
 
 ---
 
-
 ![](https://raw.githubusercontent.com/Tibing/nyan-builder/master/nyan-demo.gif)
 
 [Tibing/nyan-builder](https://github.com/tibing/nyan-builder)
@@ -381,6 +367,7 @@ _As long as there are types_
 ---
 
 ### Get stuck?
+
 #### Dive in and ask questions
 
 ---
@@ -390,4 +377,3 @@ _As long as there are types_
 [mhartington.io/angular-builders](https://mhartington.io/angular-builders/)
 
 #### &lt;/html&gt;
-

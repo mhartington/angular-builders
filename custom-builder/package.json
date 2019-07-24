@@ -8,8 +8,8 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "guess-parser": "0.3.7",
-    "guess-webpack": "0.3.7",
+    "guess-parser": "0.3.8",
+    "guess-webpack": "0.3.8",
     "ws": "^6.1.4"
   },
   "devDependencies": {

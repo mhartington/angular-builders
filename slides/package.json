@@ -16,9 +16,6 @@
   },
   "dependencies": {
     "code-surfer": "2.0.0-alpha.9",
-    "json-loader": "0.5.7",
-    "mdx-deck-code-surfer": "0.5.5",
-    "raw-loader": "3.0.0",
-    "styled-components": "4.3.2"
+    "raw-loader": "3.1.0"
   }
 }

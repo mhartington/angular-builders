@@ -1,3 +1,6 @@
+import {duotoneLight } from 'code-surfer';
+console.log(duotoneLight)
+
 export default {
   font: 'system-ui, sans-serif',
   monospace: '"SF Mono", Menlo, monospace',

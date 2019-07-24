@@ -6,3 +6,4 @@ node_modules
 !schematics/**/schema.d.ts
 !schematics/*/files/**/*
 .vscode
+.tgz
