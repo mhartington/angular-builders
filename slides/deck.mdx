@@ -2,10 +2,10 @@ import { Appear, Image } from 'mdx-deck';
 import Angular from './layouts/Angular';
 import Dark from './layouts/Dark';
 import ionic from './theme/ionic';
-import {  CodeSurferLayout,  CodeSurferColumnLayout,  Code,  Step,  oceanicNext,} from 'code-surfer';
+import {  CodeSurferLayout, Code } from 'code-surfer';
 
 
-export const themes = [oceanicNext,ionic];
+export const theme = ionic;
 
 <div>
   <h1 style={{fontFamily: "Impact", fontSize: '200px'}}>Enhance!</h1>
@@ -27,8 +27,10 @@ import IonicLayout from './layouts/Ionic';
 ### Have you heard <br/> about Ionic!?
 
 <Appear>
-  <h3>Good!</h3>
-  <p>This is not about Ionic</p>
+
+  ### Good!
+  This is not about Ionic
+
 </Appear>
 
 </IonicLayout>
@@ -122,16 +124,11 @@ $ ng test # test the app
 <CodeSurferLayout>
   <Code lang="json" code={require('!!raw-loader!./code-samples/sample-angular.js').default} />
   <Code focus="5:11" lang="json" code={require('!!raw-loader!./code-samples/sample-angular.js').default} />
+  <Code focus="5" title="Our CLI command (ng run app:build)" lang="json" code={require('!!raw-loader!./code-samples/sample-angular.js').default} />
+  <Code focus="6" title="The builder command we want to run" lang="json" code={require('!!raw-loader!./code-samples/sample-angular.js').default} />
+  <Code focus="7" title="Options to pass to builder" lang="json" code={require('!!raw-loader!./code-samples/sample-angular.js').default} />
+  <Code focus="8:10" title="Configuration overrides" lang="json" code={require('!!raw-loader!./code-samples/sample-angular.js').default} />
 </CodeSurferLayout>
-
----
-
-### Builder object
-
-- `build` is **our** CLI command (`ng run app:build`)
-- `builder` is the builder command we want to run
-- `options` get passed to builder
-- `configurations` optionally get passed
 
 ---
 
@@ -154,7 +151,7 @@ function _commandBuilder(
 }
 ```
 
-```typescript 6 subtitle="Passes options from Workspace"
+```typescript 6 title="Passes options from Workspace"
 import { BuilderOutput, createBuilder } from '@angular-devkit/architect';
 
 export default createBuilder(_commandBuilder);
@@ -167,7 +164,7 @@ function _commandBuilder(
 }
 ```
 
-```typescript 7 subtitle="The running context from the CLI"
+```typescript 7 title="The running context from the CLI"
 import { BuilderOutput, createBuilder } from '@angular-devkit/architect';
 
 export default createBuilder(_commandBuilder);
@@ -307,11 +304,11 @@ function _commandBuilder(
 
 <CodeSurferLayout>
   <Code lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-guess-build/index.ts').default}/>
-  <Code focus="14:18" subtitle="Get the browser build spec" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-guess-build/index.ts').default}/>
-  <Code focus="19" subtitle="H4x0r m0v3: change the builder name 🙃" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-guess-build/index.ts').default}/>
-  <Code focus="20:22" subtitle="Get the initial options raw builder"  lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-guess-build/index.ts').default}/>
-  <Code focus="24:26" subtitle="Validate initial options against builder" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-guess-build/index.ts').default}/>
-  <Code focus="27" subtitle="Pass those options and context to wrapper function" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-guess-build/index.ts').default}/>
+  <Code focus="14:18" title="Get the browser build spec" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-guess-build/index.ts').default}/>
+  <Code focus="19" title="UltIM4t3 h4x0r: change the builder name 🙃" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-guess-build/index.ts').default}/>
+  <Code focus="20:22" title="Get the initial options raw builder"  lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-guess-build/index.ts').default}/>
+  <Code focus="24:26" title="Validate initial options against builder" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-guess-build/index.ts').default}/>
+  <Code focus="27" title="Pass those options and context to wrapper function" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/custom-guess-build/index.ts').default}/>
 
   <Code lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/utils/guess.ts').default}/>
   <Code focus="19:46" lang="typescript" code={ require('!!raw-loader!../custom-builder/builders/utils/guess.ts').default}/>

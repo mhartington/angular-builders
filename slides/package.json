@@ -12,7 +12,7 @@
   "author": "Mike Hartington <mikehartington@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "mdx-deck": "2.5.0"
+    "mdx-deck": "2.5.1"
   },
   "dependencies": {
     "code-surfer": "2.0.0-alpha.9",

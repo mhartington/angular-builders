@@ -1,6 +1,3 @@
-import {duotoneLight } from 'code-surfer';
-console.log(duotoneLight)
-
 export default {
   font: 'system-ui, sans-serif',
   monospace: '"SF Mono", Menlo, monospace',
@@ -20,11 +17,9 @@ export default {
     '@media screen and (min-width:56em)': {
       fontSize: '32px'
     },
-    // 'p.cs-subtitle, .cs-title': {
-    //   background: 'none !important',
-    //   color: 'white',
-    //   fontSize: '40px'
-    // },
+    'p.cs-subtitle, .cs-title': {
+      fontSize: '50px'
+    },
 
     '@media screen and (min-width:64em)': {
       fontSize: '48px'

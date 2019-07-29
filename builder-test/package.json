@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:custom": "ng run app:build-custom",
+    "build:guess": "ng run app:build-guess-custom"
   },
   "private": true,
   "dependencies": {
