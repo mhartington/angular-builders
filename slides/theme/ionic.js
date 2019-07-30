@@ -1,10 +1,9 @@
 export default {
   font: 'system-ui, sans-serif',
-  monospace: '"SF Mono", Menlo, monospace',
-
+  monospace: '"Victor Mono", Menlo, monospace',
   colors: {
     text: '#151D34',
-    background: '#ffffff',
+    background: '#f6f8fa',
     link: '#07c',
     pre: '#f0f',
     preBackground: '#011627',
@@ -30,8 +29,6 @@ export default {
     'li > p': {
       margin: 0
     }
-  },
-  '*': {
   },
   pre: {
     textAlign: 'left',
