@@ -1,5 +1,5 @@
 export default {
-  font: 'system-ui, sans-serif',
+  font: '"Inter", system-ui, sans-serif',
   monospace: '"Victor Mono", Menlo, monospace',
   colors: {
     text: '#151D34',
@@ -68,8 +68,3 @@ export default {
     wordSpacing: 10
   }
 };
-
-// primary: 'white',
-// secondary: '#1b2b34', // almost black w/ blueish tint
-// tertiary: '#3880FF', // bright red
-// quaternary: '#CECECE' // pale gray'

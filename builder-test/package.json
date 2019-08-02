@@ -2,14 +2,13 @@
   "name": "builder-test",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:custom": "ng run app:build-custom",
-    "build:guess": "ng run app:build-guess-custom"
+    "build:custom": "ng run app:custom-build",
+    "build:guess": "ng run app:custom-guess-build"
   },
   "private": true,
   "dependencies": {
